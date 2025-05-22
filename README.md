@@ -28,7 +28,7 @@ Each folder includes:
 
 ## 📦 Requirements
 
-Python 3.11.7 is used for generating the examples together with the following packages:
+Python 3.11.7 is used for generating the examples 
 
 ## 📓 Development Environment
 - `jupyter` (for running and developing in Jupyter Notebooks)

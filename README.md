@@ -81,10 +81,11 @@ jupyter notebook
 
 Each notebook will:
 
+- Generate training and validation data 
 - Train the respective DeepONet architecture  
 - Run closed-loop MPC simulations 
 - Save results to the corresponding `data_standard/` or `data_MS/` folder  
-- Visualize predicted vs. true system trajectories  
+- Visualize simulation and training results  
 
 ---
 

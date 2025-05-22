@@ -35,7 +35,7 @@ Python 3.11.7 is used for generating the examples
 
 ## 🧰 Dependencies
 
-This project requires the following Python packages:
+This project requires the following Python libraries:
 
 ### 📦 Libraries
 - `time`

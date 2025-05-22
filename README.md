@@ -28,12 +28,31 @@ Each folder includes:
 
 Python 3.11.7 is used for generating the examples together with the following packages:
 
-- numpy  
-- scipy  
-- matplotlib  
-- torch  
-- tqdm  
-- jupyter  
+## 🧰 Dependencies
+
+This project requires the following Python packages:
+
+### 📦 Standard Libraries
+- `time`
+- `itertools`
+
+### 🧪 Scientific Computing
+- `numpy`
+- `pandas`
+- `scipy`
+
+### 📈 Plotting
+- `matplotlib`
+
+### 🤖 Deep Learning
+- `torch` (PyTorch)
+- `torch.nn.functional`
+
+### 🛠️ Custom Modules
+- `models` (your custom model definitions)
+
+### ⚙️ Optimization & Control
+- `casadi` (used for solving MPC problems)
 
 Install all dependencies using:
 

@@ -28,40 +28,23 @@ Each folder includes:
 
 Python 3.11.7 is used for generating the examples together with the following packages:
 
-### 📓 Development Environment
-- `jupyter` (for running and developing in Jupyter Notebooks)
-
 ## 🧰 Dependencies
 
 This project requires the following Python packages:
 
-### 📦 Standard Libraries
+### 📓 Development Environment
+- `jupyter` (for running and developing in Jupyter Notebooks)
+
+### 📦 Libraries
 - `time`
 - `itertools`
-
-### 🧪 Scientific Computing
 - `numpy`
 - `pandas`
 - `scipy`
-
-### 📈 Plotting
 - `matplotlib`
-
-### 🤖 Deep Learning
 - `torch` (PyTorch)
 - `torch.nn.functional`
-
-### 🛠️ Custom Modules
-- `models` (your custom model definitions)
-
-### ⚙️ Optimization & Control
 - `casadi` (used for solving MPC problems)
-
-Install all dependencies using:
-
-```bash
-pip install -r requirements.txt
-```
 
 ---
 

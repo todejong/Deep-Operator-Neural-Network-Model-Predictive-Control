@@ -26,7 +26,7 @@ Each folder includes:
 
 ## 📦 Requirements
 
-You will need Python 3.8+ and the following packages:
+Python 3.11.7 is used for generating the examples together with the following packages:
 
 - numpy  
 - scipy  

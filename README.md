@@ -106,7 +106,16 @@ If you use this code in your work, please cite the following paper:
 
 ## 📬 Contact
 
-For questions, suggestions, or collaborations, please contact:  
-📧 **t.o.d.jong@tue.nl**
+We welcome questions, feedback, and collaboration opportunities!
+
+- 📧 **Primary contact**: [t.o.d.jong@tue.nl](mailto:t.o.d.jong@tue.nl)
+- 📧 **Co-authors**:
+  - [khemraj_shukla@brown.edu](mailto:khemraj_shukla@brown.edu)
+  - [m.lazar@tue.nl](mailto:m.lazar@tue.nl)
+
+Feel free to reach out via email for more information about this project or related research.
+
+
+
 
 

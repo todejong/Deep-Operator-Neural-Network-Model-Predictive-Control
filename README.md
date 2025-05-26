@@ -52,12 +52,7 @@ This project requires the following Python libraries:
 
 ## 🚀 How to Run
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/DeepONet_MPC.git
-cd DeepONet_MPC
-```
+1. Download files
 
 2. Navigate to one of the example folders:
 

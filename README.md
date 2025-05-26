@@ -94,11 +94,14 @@ Each notebook will:
 If you use this code in your work, please cite the following paper:
 
 ```bibtex
-@article{deepONetMPC2025,
-  title={Deep Operator Neural Network Model Predictive Control},
-  author={Doe, John and Smith, Jane and Zhao, Lin and Wang, Kai},
-  journal={arXiv preprint arXiv:2505.12345},
-  year={2025}
+@misc{dejong2025deepoperatorneuralnetwork,
+      title={Deep Operator Neural Network Model Predictive Control}, 
+      author={Thomas Oliver de Jong and Khemraj Shukla and Mircea Lazar},
+      year={2025},
+      eprint={2505.18008},
+      archivePrefix={arXiv},
+      primaryClass={math.OC},
+      url={https://arxiv.org/abs/2505.18008}, 
 }
 ```
 

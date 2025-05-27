@@ -1,0 +1,72 @@
+close all; clear all; clc;
+
+% Load data
+load('data_siso\ablation_results.mat')
+training_loss_siso = training_loss;
+validation_loss_siso = validation_loss;
+load('data_mimo\ablation_results.mat')
+training_loss_mimo = training_loss;
+validation_loss_mimo = validation_loss;
+
+% Compute mean and std
+training_loss_siso_mean = mean(training_loss_siso, 1);
+training_loss_siso_std  = std(training_loss_siso, 0, 1);
+validation_loss_siso_mean = mean(validation_loss_siso, 1);
+validation_loss_siso_std  = std(validation_loss_siso, 0, 1);
+
+T = length(training_loss_siso_mean);
+t = 1:T;
+
+% Compute upper and lower bounds
+train_upper = training_loss_siso_mean + training_loss_siso_std;
+train_lower = training_loss_siso_mean - training_loss_siso_std;
+val_upper   = validation_loss_siso_mean + validation_loss_siso_std;
+val_lower   = validation_loss_siso_mean - validation_loss_siso_std;
+
+% Prevent log(0) errors
+epsilon = 1e-10;
+train_lower(train_lower < epsilon) = epsilon;
+val_lower(val_lower < epsilon) = epsilon;
+
+% Plot
+set(groot, 'defaultTextInterpreter', 'latex')
+set(groot, 'defaultAxesFontSize', 10)
+set(groot, 'defaultAxesFontName', 'Times New Roman')  % Or 'Times'
+
+figure()
+hold on
+
+% Shaded regions (std dev)
+patch([t, fliplr(t)], [train_upper, fliplr(train_lower)], 'b', ...
+    'FaceAlpha', 0.2, 'EdgeColor', 'none');
+patch([t, fliplr(t)], [val_upper, fliplr(val_lower)], 'r', ...
+    'FaceAlpha', 0.2, 'EdgeColor', 'none');
+
+% Plot means
+h1 = semilogy(t, training_loss_siso_mean, 'b', 'LineWidth', 1.5);
+h2 = semilogy(t, validation_loss_siso_mean, 'r', 'LineWidth', 1.5);
+
+% Tight y-limits based on all data (avoid log(0))
+y_min = max(min([train_lower(:); val_lower(:)]), 1e-10);
+y_max = max([train_upper(:); val_upper(:)]);
+ylim([y_min, y_max]);
+
+% Labels and styling
+legend([h1, h2], {'Training Loss', 'Validation Loss'}, 'Location', 'best');
+xlabel('Epoch');
+ylabel('Loss');
+xlim([0, 40000]);
+ylim([10^(-5),10^0])
+grid on;
+set(gca, 'YScale', 'log');
+set(gca, 'TickLabelInterpreter', 'latex');
+title('Training and Validation Loss (with $\pm$1 Std Dev)', 'Interpreter', 'latex');
+
+% Set figure size to match LaTeX column width (~3.5 inches per column)
+fig = gcf;
+fig.Units = 'inches';
+fig.Position(3) = 3.5;   % Width in inches (1 column width)
+fig.Position(4) = 3;   % Height — adjust to your needs
+
+% Export figure as vector PDF
+exportgraphics(fig, 'figures/loss_train_val.pdf', 'ContentType', 'vector')
